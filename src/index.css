@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-mono: "Space Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+body {
+  background-color: #050505;
+  color: #fff;
+  font-family: 'Space Mono', monospace;
+}
+
+.neon-border {
+  box-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14;
+  border: 1px solid #39ff14;
+}
+
+.neon-text-blue {
+  color: #00f3ff;
+  text-shadow: 0 0 8px #00f3ff;
+}
+
+.neon-text-pink {
+  color: #ff00ff;
+  text-shadow: 0 0 8px #ff00ff;
+}
+
+.grid-line {
+  background-image: linear-gradient(to right, rgba(57, 255, 20, 0.1) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(57, 255, 20, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.scanline {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.2) 50%),
+              linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+  background-size: 100% 4px, 3px 100%;
+  pointer-events: none;
+  z-index: 50;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.crt-flicker {
+  animation: flicker 0.15s infinite;
+}
+
+@keyframes flicker {
+  0% { opacity: 0.97; }
+  50% { opacity: 1; }
+  100% { opacity: 0.98; }
+}
+
+/* Custom scrollbar for webkit */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: #39ff14;
+  opacity: 0.5;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #39ff14;
+}
